@@ -1,0 +1,99 @@
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Private Pad Demo</title>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.4.1/firebase.js" integrity="sha512-0yqugUdIBQWLDMdlx/JynxD8/9bgqDNUWHR01YqNWEc50Im3YCoIly4ZHJj6TDjrQB4+uSEv6AMLSAAGwiuJLQ==" crossorigin="anonymous"></script>
+
+  <!-- CodeMirror -->
+  <script src="lib/codemirror-5.60.0/lib/codemirror.js"></script>
+  <link rel="stylesheet" href="lib/codemirror-5.60.0/lib/codemirror.css" />
+  
+  
+  <script src="lib/codemirror-5.60.0/mode/clike/clike.js"></script>
+  <script src="lib/codemirror-5.60.0/mode/php/php.js"></script>
+  
+  <script src="lib/codemirror-5.60.0/mode/gfm/gfm.js"></script>
+  <script src="lib/codemirror-5.60.0/mode/javascript/javascript.js"></script>
+  
+  
+   <!-- Firepad -->
+   <link rel="stylesheet" href="https://firepad.io/releases/v1.5.9/firepad.css" />
+   <script src="https://firepad.io/releases/v1.5.9/firepad.min.js"></script>
+
+<link rel="stylesheet" href="firepad-userlist.css" />
+<link rel="stylesheet" href="pvtpad.css" />
+
+</head>
+
+<body>
+  <div id="top">
+    <div id="top-bg-tile">
+      <div id="top-content">
+
+        <div id="firepad-demo"></div>
+
+        <a onclick="displayPads()" id="my-pads" class="sprite-btn"></a>
+
+        <a href="./" id="create-pad" class="sprite-btn"></a>
+
+        <div id="my-pads-list">
+
+        </div>
+        <div id="firepad-container">
+
+          <div id="firepad-userlist"></div>
+
+          <div id="firepad"></div>
+
+        </div>
+
+        <div id="share-box">
+          <div id="share-with-friends">Edit with Friends</div>
+          <div id="share-features">
+            <table>
+              <tr>
+                <td>
+                  <input type="text" readonly="readonly" id="url" />
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div id="description">Firepad is an open source collaborative text editor you can add to <b>your</b> own website.
+          <div id="learn-more"><a href="https://www.firepad.io/">Learn More &gt;</a></div>
+        </div>
+        <a href="http://www.firebase.com/?utm_source=demo&utm_medium=email&utm_campaign=firepad" target="_blank" id="powered-by-firebase"></a>
+      </div>
+    </div>
+  </div>
+
+  
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39969708-1']);
+  _gaq.push(['_setDomainName', 'firepad.io']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script type="text/javascript" src="https://www.firepad.io/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="firepad-userlist.js"></script>
+<script type="text/javascript" src="pvtpad.js"></script>
+
+<script type="text/javascript">
+    function displayPads() {
+      $('#my-pads-list').toggle();
+    }
+</script>
+</body>
+</html>
