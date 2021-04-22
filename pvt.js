@@ -24,7 +24,10 @@ function joinFirepadForHash() {
   codeMirror = CodeMirror(
     document.getElementById('firepad'), 
     { 
-      lineWrapping: true 
+      lineWrapping: true,
+      lineNumbers: true,
+      theme: 'material-darker',
+        mode: 'javascript'
     }
   );
 
@@ -32,9 +35,8 @@ function joinFirepadForHash() {
     firepadRef, 
     codeMirror,
       { 
-        richTextToolbar: true, 
-        richTextShortcuts: true, 
-        userId: userId
+        userId: userId,
+        
       }
   );
 
