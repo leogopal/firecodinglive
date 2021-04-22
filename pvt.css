@@ -184,15 +184,6 @@ body {
   color: #dc4700;
 }
 
-#powered-by-firebase {
-  position: absolute;
-  right: 40px;
-  bottom: 15px;
-  width: 129px;
-  height: 34px;
-  background-image: url('https://www.firepad.io/images/powered-by-firebase-dim.png');
-}
-
 #url {
   width: 280px;
   height: 30px;
