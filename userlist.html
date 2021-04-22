@@ -8,12 +8,8 @@
 <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase.js"></script>
 
 <!-- CodeMirror -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/codemirror.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/codemirror.css" />
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/mode/php/php.min.js" integrity="sha512-i+JuurEwS1TBFIkaoI0KNhkdiR2yu5nAVdFJ/3Sm3BVbMIkq/1Nv/JsFGUZsqB4VKV6vj1wP5yi1aqyxenx2kw==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/mode/gfm/gfm.min.js" integrity="sha512-hQsxLmJkuCV1hCwcIfY+8y3QzRhgQReYWheM9O0P2GF5FNxTIWCpBH35wPUshlOe6JI8Fj/l2nk015S5HvWmsw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
 
 <!-- Firepad -->
 <link rel="stylesheet" href="https://firepad.io/releases/v1.5.10/firepad.css" />
@@ -61,26 +57,14 @@
       var firepadRef = getExampleRef();
 
       //// Create CodeMirror (with lineWrapping on).
-      var codeMirror = CodeMirror(
-        document.getElementById('firepad'), 
-        {
-          lineWrapping: true 
-        }
-      );
+      var codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
 
       // Create a random ID to use as our user ID (we must give this to firepad and FirepadUserList).
       var userId = Math.floor(Math.random() * 9999999999).toString();
 
       //// Create Firepad (with rich text features and our desired userId).
-      var firepad = Firepad.fromCodeMirror(
-        firepadRef, 
-        codeMirror,
-          { 
-            richTextToolbar: true, 
-            richTextShortcuts: true, 
-            userId: userId
-          }
-        );
+      var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
+          { richTextToolbar: true, richTextShortcuts: true, userId: userId});
 
       //// Create FirepadUserList (with our desired userId).
       var firepadUserList = FirepadUserList.fromDiv(firepadRef.child('users'),
