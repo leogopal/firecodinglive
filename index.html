@@ -80,7 +80,10 @@
               badge: 'bottomleft'
             }
           },
-          firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+          firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
+          {
+            requireDisplayName: true
+          }
         ],
         // Set to true if you only have a single federated provider like
         // firebase.auth.GoogleAuthProvider.PROVIDER_ID and you would like to
