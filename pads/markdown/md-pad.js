@@ -21,7 +21,7 @@ function joinFirepadForHash() {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
-    firebase.auth().onAuthStateChanged(function(user) {
+    var user = firebase.auth().currentUser;
 
         if (user) {
         // User is signed in.
@@ -30,12 +30,12 @@ function joinFirepadForHash() {
         // No user is signed in.
             alert('Not signed in.');
         }
-    });
+   
 
     var id = window.location.hash.replace(/#/g, '') || randomString(10);
     var url = window.location.toString().replace(/#.*/, '') + '#' + id;
     var firepadRef = firebase.database().ref('private-pads').child(id);
-    var userId = firepadRef.push().key; // Just a random ID.
+    var userId = f; // Just a random ID.
 
     codeMirror = CodeMirror(
         document.getElementById('firecode'),
