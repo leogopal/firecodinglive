@@ -41,14 +41,21 @@ var firebaseConfig = {
 
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+    
 
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    var provider = new firebase.auth.GithubAuthProvider();
+    firebase.auth().signInWithRedirect(provider);
+
     ui.start('#firebaseui-auth-container', {
+        
   signInOptions: [
     // List of OAuth providers supported.
     firebase.auth.GithubAuthProvider.PROVIDER_ID
+    
+
   ],
-  // Other config options...
+  ignInSuccessUrl: https://quizzical-ritchie-0bc060.netlify.app/index.html;
 });
 </script>
     
