@@ -50,7 +50,7 @@
   url: 'https://quizzical-ritchie-0bc060.netlify.app/',
   // This must be true.
 };
-
+email = window.prompt('Please provide your email for confirmation');
 firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
   .then(() => {
     // The link was successfully sent. Inform the user.
