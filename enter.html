@@ -49,12 +49,26 @@ var firebaseConfig = {
 
     ui.start('#firebaseui-auth-container', {
         
-  signInOptions: [
-    // List of OAuth providers supported.
-    firebase.auth.GithubAuthProvider.PROVIDER_ID
-    
-  ],
+        signInOptions: [
+            // List of OAuth providers supported.
+            firebase.auth.GithubAuthProvider.PROVIDER_ID
+            
+        ],
+
+        
  
+});
+
+firebase.auth().signInAnonymously().catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+
+  if (errorCode === 'auth/operation-not-allowed') {
+    alert('You must enable Anonymous auth in the Firebase Console.');
+  } else {
+    console.error(error);
+  }
 });
 </script>
     
