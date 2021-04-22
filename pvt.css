@@ -159,3 +159,7 @@ body {
   text-align: center;
   cursor: pointer;
 }
+
+a.powered-by-firepad {
+  display: none;
+  }
