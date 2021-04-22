@@ -8,21 +8,26 @@ function joinFirepadForHash() {
     $('.CodeMirror').remove();
   }
 
-  firebase.initializeApp({
-    apiKey: 'RvagRBvQY0GOz1CI8sof4hBsCXJQSSRpQEkWS35X',
-    authDomain: "firepad-leogopal-default-rtdb.firebaseio.com",
-    databaseURL: "https://firepad-leogopal-default-rtdb.firebaseio.com"
-  });
+  var firebaseConfig = {
+    apiKey: "AIzaSyAaA7QkqCKBlmT-cU3DyVXYAp5t-Pkfggk",
+    authDomain: "firecodelive.firebaseapp.com",
+    databaseURL: "https://firecodelive-default-rtdb.firebaseio.com",
+    projectId: "firecodelive",
+    storageBucket: "firecodelive.appspot.com",
+    messagingSenderId: "694520542067",
+    appId: "1:694520542067:web:fd0780aae5aa24b7558b06",
+    measurementId: "G-4DKK2YPLF6"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
   var id = window.location.hash.replace(/#/g, '') || randomString(10);
   var url = window.location.toString().replace(/#.*/, '') + '#' + id;
-
   var firepadRef = firebase.database().ref('private-pads').child(id);
-
   var userId = firepadRef.push().key; // Just a random ID.
 
   codeMirror = CodeMirror(
-    document.getElementById('code'),
+    document.getElementById('firecode'),
     {
       mode: {
         name: "gfm",
@@ -55,8 +60,7 @@ function joinFirepadForHash() {
 
     if (firepad.isHistoryEmpty()) {
         
-      firepad.setText('// JavaScript Editing with Firepad!\nfunction go() {\n  var message = "Hello, world.";\n  console.log(message);\n');
-    
+      firepad.setText('# Markdown');
     }
 
     ensurePadInList(id);

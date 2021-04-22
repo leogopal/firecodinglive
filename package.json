@@ -1,0 +1,46 @@
+{
+  "name": "firecodinglive",
+  "version": "1.0.0",
+  "description": "Firebad is a live coding testing environment.",
+  "main": "assets/start.js",
+  "engines": {
+    "node": ">= 10.13"
+  },
+  "preferGlobal": true,
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leogopal/firecodinglive.git"
+  },
+  "keywords": [
+    "dev",
+    "debug",
+    "firebase",
+    "testing"
+  ],
+  "author": "Leo Gopal",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/leogopal/firecodinglive/issues"
+  },
+  "homepage": "https://github.com/leogopal/firecodinglive#readme",
+  "dependencies": {
+    "firepad": "^1.5.11"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.0",
+    "codemirror": "^5.61.0",
+    "dotenv": "^8.2.0",
+    "eslint-plugin-jsdoc": "^30.7.13",
+    "eslint-plugin-prettier": "^3.3.1",
+    "firebase": "^7.24.0",
+    "firebase-admin": "^9.4.2",
+    "firebase-functions": "^3.11.0",
+    "prettier": "^2.2.1"
+  }
+}

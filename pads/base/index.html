@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Firecode Live Private Coding Pad</title>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+
+    <!-- CodeMirror -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css"/>
+
+    <!-- Firepad -->
+    <link rel="stylesheet" href="https://firepad.io/releases/v1.5.10/firepad.css"/>
+    <script src="https://firepad.io/releases/v1.5.10/firepad.min.js"></script>
+
+    <link rel="stylesheet" href="../../lib/codemirror-5.60.0/theme/material-darker.css"/>
+
+    <link href="https://www.leogopal.com/favicon.ico" rel="shortcut icon"/>
+</head>
+
+<body onload="init()">
+<div id="firepad"></div>
+<script>
+    function init() {
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyAaA7QkqCKBlmT-cU3DyVXYAp5t-Pkfggk",
+            authDomain: "firecodelive.firebaseapp.com",
+            databaseURL: "https://firecodelive-default-rtdb.firebaseio.com",
+            projectId: "firecodelive",
+            storageBucket: "firecodelive.appspot.com",
+            messagingSenderId: "694520542067",
+            appId: "1:694520542067:web:fd0780aae5aa24b7558b06",
+            measurementId: "G-4DKK2YPLF6"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Get Firebase Database reference.
+        var firepadRef = firebase.database().ref();
+
+        // Create CodeMirror (with lineWrapping on).
+        var codeMirror = CodeMirror(document.getElementById('firepad'), {lineWrapping: true});
+
+        // Create Firepad (with rich text toolbar and shortcuts enabled).
+        var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
+            {richTextShortcuts: true, richTextToolbar: true, defaultText: 'Hello, World!'});
+    }
+</script>
+</body>
+</html>

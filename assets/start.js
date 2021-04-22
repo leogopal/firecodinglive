@@ -1,34 +1,43 @@
-var firepad = null, userList = null, codeMirror = null;
-
 function joinFirepadForHash() {
-    if (firepad) {
-        // Clean up.
-        firepad.dispose();
-        userList.dispose();
-        $('.CodeMirror').remove();
-    }
 
-    firebase.initializeApp({
-        apiKey: 'RvagRBvQY0GOz1CI8sof4hBsCXJQSSRpQEkWS35X',
-        authDomain: "firepad-leogopal-default-rtdb.firebaseio.com",
-        databaseURL: "https://firepad-leogopal-default-rtdb.firebaseio.com"
-    });
+    var firebase = require('firebase');
+    var codemirror = require('codemirror');
+    var firepad = require('firepad');
 
+// Config
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyAaA7QkqCKBlmT-cU3DyVXYAp5t-Pkfggk",
+        authDomain: "firecodelive.firebaseapp.com",
+        databaseURL: "https://firecodelive-default-rtdb.firebaseio.com",
+        projectId: "firecodelive",
+        storageBucket: "firecodelive.appspot.com",
+        messagingSenderId: "694520542067",
+        appId: "1:694520542067:web:fd0780aae5aa24b7558b06",
+        measurementId: "G-4DKK2YPLF6"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+// standard variables
     var id = window.location.hash.replace(/#/g, '') || randomString(10);
     var url = window.location.toString().replace(/#.*/, '') + '#' + id;
-
     var firepadRef = firebase.database().ref('private-pads').child(id);
-
     var userId = firepadRef.push().key; // Just a random ID.
 
+// custom pad settings
     codeMirror = CodeMirror(
-        document.getElementById('code'),
+        document.getElementById('firecode'),
         {
+            mode: {
+                name: "gfm",
+                tokenTypeOverrides: {
+                    emoji: "emoji"
+                }
+            },
             lineNumbers: true,
-            matchBrackets: true,
-            mode: "application/x-httpd-php",
-            indentUnit: 4,
-            indentWithTabs: true,
             theme: 'material-darker'
         }
     );
@@ -38,7 +47,7 @@ function joinFirepadForHash() {
         codeMirror,
         {
             userId: userId,
-            defaultText:'<?php $PHPQuestion = true; ?>'
+            defaultText: '// JavaScript Editing with Firepad!\nfunction go() {\n  var message = "Hello, world.";\n  console.log(message);\n}'
         }
     );
 
@@ -51,7 +60,9 @@ function joinFirepadForHash() {
     firepad.on('ready', function () {
 
         if (firepad.isHistoryEmpty()) {
-             firepad.setText('<?php $PHPQuestion = true; ?>');
+
+            firepad.setText('// JavaScript Editing with Firepad!\nfunction go() {\n  var message = "Hello, world.";\n  console.log(message);\n');
+
         }
 
         ensurePadInList(id);
@@ -72,19 +83,6 @@ function joinFirepadForHash() {
     });
 }
 
-function padListEnabled() {
-
-    return (
-        typeof localStorage !== 'undefined'
-        && typeof JSON !== 'undefined'
-        && localStorage.setItem
-        && localStorage.getItem
-        && JSON.parse
-        && JSON.stringify
-    );
-
-}
-
 function ensurePadInList(id) {
 
     if (!padListEnabled()) {
@@ -92,6 +90,7 @@ function ensurePadInList(id) {
     }
 
     var list = JSON.parse(localStorage.getItem('demo-pad-list') || "{ }");
+
     if (!(id in list)) {
         var now = new Date();
         var year = now.getFullYear(), month = now.getMonth() + 1, day = now.getDate();

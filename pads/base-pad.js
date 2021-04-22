@@ -8,6 +8,8 @@ function joinFirepadForHash() {
     $('.CodeMirror').remove();
   }
 
+
+
   firebase.initializeApp({
     apiKey: 'RvagRBvQY0GOz1CI8sof4hBsCXJQSSRpQEkWS35X',
     authDomain: "firepad-leogopal-default-rtdb.firebaseio.com",
