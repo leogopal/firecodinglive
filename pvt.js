@@ -11,9 +11,10 @@ function joinFirepadForHash() {
   var id = window.location.hash.replace(/#/g, '') || randomString(10);
   var url = window.location.toString().replace(/#.*/, '') + '#' + id;
   firebase.initializeApp({
-    apiKey: '<API_KEY>',
-    authDomain: "firepad.firebaseapp.com",
-    databaseURL: "https://firepad.firebaseio.com"
+    apiKey: 'RvagRBvQY0GOz1CI8sof4hBsCXJQSSRpQEkWS35X',
+    authDomain: "firepad-leogopal-default-rtdb.firebaseio.com",
+    databaseURL: "https://firepad-leogopal-default-rtdb.firebaseio.com"
+  
   });
   var firepadRef = firebase.database().ref('demo').child(id);
 
