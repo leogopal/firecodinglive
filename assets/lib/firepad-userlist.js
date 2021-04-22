@@ -20,7 +20,7 @@ var FirepadUserList = (function () {
             }
         });
 
-        this.userList_ = this.makeUserList_()
+        this.userList_ = this.makeUserList_();
         place.appendChild(this.userList_);
     }
 

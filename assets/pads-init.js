@@ -8,15 +8,11 @@ var pads = {
                 }
             );
 
-            var userId = Math.floor(Math.random() * 9999999999).toString();
-            this.firepadUserList = FirepadUserList.fromDiv(ref.child('users'), div, userId);
-
             this.firepad = Firepad.fromCodeMirror(
                 ref,
                 codeMirror, {
                     richTextToolbar: true,
                     richTextShortcuts: true,
-                    userId: userId
                 }
             );
 
@@ -54,7 +50,6 @@ var pads = {
         },
         dispose: function () {
             this.firepad.dispose();
-            this.firepadUserList.dispose();
         }
     },
     'php': {
@@ -70,14 +65,9 @@ var pads = {
                 }
             );
 
-            var userId = Math.floor(Math.random() * 9999999999).toString();
-            this.firepadUserList = FirepadUserList.fromDiv(ref.child('users'), div, userId);
-
             this.firepad = Firepad.fromCodeMirror(
                 ref,
-                codeMirror, {
-                    userId: userId
-                }
+                codeMirror
             );
 
             var self = this;
@@ -114,7 +104,6 @@ var pads = {
         },
         dispose: function () {
             this.firepad.dispose();
-            this.firepadUserList.dispose();
         }
     },
     'javascript': {
@@ -131,14 +120,9 @@ var pads = {
                     theme: 'material-darker'
                 });
 
-            var userId = Math.floor(Math.random() * 9999999999).toString();
-            this.firepadUserList = FirepadUserList.fromDiv(ref.child('users'), div, userId);
-
             this.firepad = Firepad.fromCodeMirror(
                 ref,
-                codeMirror, {
-                    userId: userId,
-                }
+                codeMirror,
             );
 
             var self = this;
@@ -150,7 +134,6 @@ var pads = {
         },
         dispose: function () {
             this.firepad.dispose();
-            this.firepadUserList.dispose();
         }
     },
     'css': {
@@ -168,14 +151,9 @@ var pads = {
                 }
             );
 
-            var userId = Math.floor(Math.random() * 9999999999).toString();
-            this.firepadUserList = FirepadUserList.fromDiv(ref.child('users'), div, userId);
-
             this.firepad = Firepad.fromCodeMirror(
                 ref,
-                codeMirror, {
-                    userId: userId
-                }
+                codeMirror,
             );
 
             var self = this;
@@ -187,7 +165,7 @@ var pads = {
         },
         dispose: function () {
             this.firepad.dispose();
-            this.firepadUserList.dispose();
+
         }
     },
     'markdown': {
@@ -211,9 +189,7 @@ var pads = {
 
             this.firepad = Firepad.fromCodeMirror(
                 ref,
-                codeMirror, {
-                    userId: userId
-                }
+                codeMirror,
             );
 
             var self = this;
@@ -225,7 +201,6 @@ var pads = {
         },
         dispose: function () {
             this.firepad.dispose();
-            this.firepadUserList.dispose();
         }
     },
     'html': {
@@ -263,8 +238,7 @@ var pads = {
             this.firepad = Firepad.fromCodeMirror(
                 ref,
                 codeMirror, {
-                    selectionPointer: true,
-                    userId: userId
+                    selectionPointer: true
                 }
             );
 
@@ -302,7 +276,6 @@ var pads = {
         },
         dispose: function () {
             this.firepad.dispose();
-            this.firepadUserList.dispose();
         }
     },
     'userlist': {
@@ -432,7 +405,7 @@ function scrollToPad(pad) {
 }
 
 function randomString(length) {
-    var text = "firelg";
+    var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     for (var i = 0; i < length; i++)

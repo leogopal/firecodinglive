@@ -19,281 +19,23 @@
     <div class="row">
 
         <div class="span9">
-            <section id="intro">
-                <div class="uses-title example-title">All Examples</div>
-                <p>Examples are checked into the GitHub repository. You can take a look with:</p>
-                <pre>&gt; git clone git://github.com/firebase/firepad.git
-&gt; open firepad/examples/index.html</pre>
-                <p>Or you can view them below and click "View Source on GitHub" to jump to the source.</p>
-            </section>
 
             <section id="editor">
                 <p>Use Firepad's rich text features for collaborative blogging, note taking, proofreading and much
                     more!</p>
                 <div class="pad-container">
-                    <div class="firepad firepad-richtext firepad-richtext firepad-with-toolbar">
-                        <div class="firepad-toolbar">
-                            <div class="firepad-toolbar-wrapper">
-                                <div class="firepad-btn-group"><a class="firepad-btn firepad-dropdown">Font ▾
-                                    <ul class="firepad-dropdown-menu"><a><span
-                                            style="font-family:Arial">Arial</span></a><a><span
-                                            style="font-family:Comic Sans MS">Comic Sans MS</span></a><a><span
-                                            style="font-family:Courier New">Courier New</span></a><a><span
-                                            style="font-family:Impact">Impact</span></a><a><span
-                                            style="font-family:Times New Roman">Times New Roman</span></a><a><span
-                                            style="font-family:Verdana">Verdana</span></a></ul>
-                                </a></div>
-                                <div class="firepad-btn-group"><a class="firepad-btn firepad-dropdown">Size ▾
-                                    <ul class="firepad-dropdown-menu"><a><span
-                                            style="font-size:9px; line-height:3px;">9</span></a><a><span
-                                            style="font-size:10px; line-height:4px;">10</span></a><a><span
-                                            style="font-size:12px; line-height:6px;">12</span></a><a><span
-                                            style="font-size:14px; line-height:8px;">14</span></a><a><span
-                                            style="font-size:18px; line-height:12px;">18</span></a><a><span
-                                            style="font-size:24px; line-height:18px;">24</span></a><a><span
-                                            style="font-size:32px; line-height:26px;">32</span></a><a><span
-                                            style="font-size:42px; line-height:36px;">42</span></a></ul>
-                                </a></div>
-                                <div class="firepad-btn-group"><a class="firepad-btn firepad-dropdown">Color ▾
-                                    <ul class="firepad-dropdown-menu"><a>
-                                        <div class="firepad-color-dropdown-item" style="background-color:black"></div>
-                                    </a><a>
-                                        <div class="firepad-color-dropdown-item" style="background-color:red"></div>
-                                    </a><a>
-                                        <div class="firepad-color-dropdown-item" style="background-color:green"></div>
-                                    </a><a>
-                                        <div class="firepad-color-dropdown-item" style="background-color:blue"></div>
-                                    </a><a>
-                                        <div class="firepad-color-dropdown-item" style="background-color:yellow"></div>
-                                    </a><a>
-                                        <div class="firepad-color-dropdown-item" style="background-color:cyan"></div>
-                                    </a><a>
-                                        <div class="firepad-color-dropdown-item" style="background-color:magenta"></div>
-                                    </a><a>
-                                        <div class="firepad-color-dropdown-item" style="background-color:grey"></div>
-                                    </a></ul>
-                                </a></div>
-                                <div class="firepad-btn-group"><a class="firepad-btn"><span
-                                        class="firepad-tb-bold"></span></a><a class="firepad-btn"><span
-                                        class="firepad-tb-italic"></span></a><a class="firepad-btn"><span
-                                        class="firepad-tb-underline"></span></a><a class="firepad-btn"><span
-                                        class="firepad-tb-strikethrough"></span></a></div>
-                                <div class="firepad-btn-group"><a class="firepad-btn"><span
-                                        class="firepad-tb-list-2"></span></a><a class="firepad-btn"><span
-                                        class="firepad-tb-numbered-list"></span></a><a class="firepad-btn"><span
-                                        class="firepad-tb-list"></span></a></div>
-                                <div class="firepad-btn-group"><a class="firepad-btn"><span
-                                        class="firepad-tb-indent-decrease"></span></a><a class="firepad-btn"><span
-                                        class="firepad-tb-indent-increase"></span></a></div>
-                                <div class="firepad-btn-group"><a class="firepad-btn"><span
-                                        class="firepad-tb-paragraph-left"></span></a><a class="firepad-btn"><span
-                                        class="firepad-tb-paragraph-center"></span></a><a class="firepad-btn"><span
-                                        class="firepad-tb-paragraph-right"></span></a></div>
-                                <div class="firepad-btn-group"><a class="firepad-btn"><span
-                                        class="firepad-tb-undo"></span></a><a class="firepad-btn"><span
-                                        class="firepad-tb-redo"></span></a></div>
-                                <div class="firepad-btn-group"><a class="firepad-btn"><span
-                                        class="firepad-tb-insert-image"></span></a></div>
-                            </div>
-                        </div>
-                        <div class="CodeMirror cm-s-default CodeMirror-wrap" style="">
-                            <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 14px;">
-                                <textarea autocorrect="off" autocapitalize="off" spellcheck="false"
-                                          style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"
-                                          tabindex="0"></textarea></div>
-                            <div class="CodeMirror-vscrollbar" cm-not-content="true"
-                                 style="width: 18px; pointer-events: none; bottom: 0px;">
-                                <div style="min-width: 1px; height: 0px;"></div>
-                            </div>
-                            <div class="CodeMirror-hscrollbar" cm-not-content="true"
-                                 style="height: 18px; pointer-events: none;">
-                                <div style="height: 100%; min-height: 1px; width: 0px;"></div>
-                            </div>
-                            <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
-                            <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
-                            <div class="CodeMirror-scroll" tabindex="-1">
-                                <div class="CodeMirror-sizer"
-                                     style="margin-left: 0px; margin-bottom: 0px; border-right-width: 30px; min-height: 208px; padding-right: 0px; padding-bottom: 0px;">
-                                    <div style="position: relative; top: 0px;">
-                                        <div class="CodeMirror-lines">
-                                            <div style="position: relative; outline: none;">
-                                                <div class="CodeMirror-measure"></div>
-                                                <div class="CodeMirror-measure"></div>
-                                                <div style="position: relative; z-index: 1;"></div>
-                                                <div class="CodeMirror-cursors">
-                                                    <div class="CodeMirror-cursor"
-                                                         style="left: 4px; top: 0px; height: 29px;">&nbsp;
-                                                    </div>
-                                                </div>
-                                                <div class="CodeMirror-code" style="">
-                                                    <pre class=" CodeMirror-line "><span
-                                                            style="padding-right: 0.1px;"><span
-                                                            class="  firepad-fs-24px">Rich-text editing with </span><span
-                                                            class="  firepad-fs-24px firepad-c-red">Firepad!</span></span></pre>
-                                                    <pre class=" CodeMirror-line "><span
-                                                            style="padding-right: 0.1px;"><span
-                                                            class="  firepad-fs-14px">Supports:</span></span></pre>
-                                                    <pre class=" CodeMirror-line  firepad-li-1 firepad-lt-u"><span
-                                                            style="padding-right: 0.1px;"><span
-                                                            class="CodeMirror-widget" cm-ignore-events="true"><div
-                                                            class="firepad-list-left">•</div></span><span
-                                                            class="  firepad-fs-14px">Different </span><span
-                                                            class="  firepad-fs-14px firepad-f-impact">fonts,</span><span
-                                                            class="  firepad-fs-24px"> sizes, </span><span
-                                                            class="  firepad-fs-14px firepad-c-blue">and colors.</span></span></pre>
-                                                    <pre class=" CodeMirror-line  firepad-li-1 firepad-lt-u"><span
-                                                            style="padding-right: 0.1px;"><span
-                                                            class="CodeMirror-widget" cm-ignore-events="true"><div
-                                                            class="firepad-list-left">•</div></span><span
-                                                            class="  firepad-fs-14px firepad-b">Bold, </span><span
-                                                            class="  firepad-fs-14px firepad-i">italic, </span><span
-                                                            class="  firepad-fs-14px firepad-u">and underline.</span></span></pre>
-                                                    <pre class=" CodeMirror-line  firepad-li-1 firepad-lt-u"><span
-                                                            style="padding-right: 0.1px;"><span
-                                                            class="CodeMirror-widget" cm-ignore-events="true"><div
-                                                            class="firepad-list-left">•</div></span><span
-                                                            class="  firepad-fs-14px">Lists</span></span></pre>
-                                                    <pre class=" CodeMirror-line  firepad-li-2 firepad-lt-o"><span
-                                                            style="padding-right: 0.1px;"><span
-                                                            class="CodeMirror-widget" cm-ignore-events="true"><div
-                                                            class="firepad-list-left">1.</div></span><span
-                                                            class="  firepad-fs-14px">One</span></span></pre>
-                                                    <pre class=" CodeMirror-line  firepad-li-2 firepad-lt-o"><span
-                                                            style="padding-right: 0.1px;"><span
-                                                            class="CodeMirror-widget" cm-ignore-events="true"><div
-                                                            class="firepad-list-left">2.</div></span><span
-                                                            class="  firepad-fs-14px">Two</span></span></pre>
-                                                    <pre class=" CodeMirror-line  firepad-li-1 firepad-lt-u"><span
-                                                            style="padding-right: 0.1px;"><span
-                                                            class="CodeMirror-widget" cm-ignore-events="true"><div
-                                                            class="firepad-list-left">•</div></span><span
-                                                            class="  firepad-fs-14px">Undo / redo</span></span></pre>
-                                                    <pre class=" CodeMirror-line  firepad-li-1 firepad-lt-u"><span
-                                                            style="padding-right: 0.1px;"><span
-                                                            class="CodeMirror-widget" cm-ignore-events="true"><div
-                                                            class="firepad-list-left">•</div></span><span
-                                                            class="  firepad-fs-14px">Cursor / selection synchronization.</span></span></pre>
-                                                    <pre class=" CodeMirror-line  firepad-li-1 firepad-lt-u"><span
-                                                            style="padding-right: 0.1px;"><span
-                                                            class="CodeMirror-widget" cm-ignore-events="true"><div
-                                                            class="firepad-list-left">•</div></span><span
-                                                            class="  firepad-fs-14px">And it's all fully collaborative!</span></span></pre>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="position: absolute; height: 30px; width: 1px; top: 208px;"></div>
-                                <div class="CodeMirror-gutters" style="display: none; height: 238px;"></div>
-                            </div>
-                        </div>
-                        <a class="powered-by-firepad" href="http://www.firepad.io/" target="_blank"></a></div>
+                    <div class="firepad"></div>
                 </div>
             </section>
-            <section id="code">
+
+            <section id="markdown">
                 <p>Combined with CodeMirror's extensive code editing features, Firepad is great for pair
                     programming!</p>
                 <div class="pad-container">
-                    <div class="firepad">
-                        <div class="CodeMirror cm-s-default" style="">
-                            <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 34px;">
-                                <textarea autocorrect="off" autocapitalize="off" spellcheck="false"
-                                          style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"
-                                          tabindex="0"></textarea></div>
-                            <div class="CodeMirror-vscrollbar" cm-not-content="true"
-                                 style="width: 18px; pointer-events: none; bottom: 0px;">
-                                <div style="min-width: 1px; height: 0px;"></div>
-                            </div>
-                            <div class="CodeMirror-hscrollbar" cm-not-content="true"
-                                 style="height: 18px; pointer-events: none; right: 0px; left: 0px;">
-                                <div style="height: 100%; min-height: 1px; width: 0px;"></div>
-                            </div>
-                            <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
-                            <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
-                            <div class="CodeMirror-scroll" tabindex="-1">
-                                <div class="CodeMirror-sizer"
-                                     style="margin-left: 30px; margin-bottom: 0px; border-right-width: 30px; min-height: 88px; min-width: 301.062px; padding-right: 0px; padding-bottom: 0px;">
-                                    <div style="position: relative; top: 0px;">
-                                        <div class="CodeMirror-lines">
-                                            <div style="position: relative; outline: none;">
-                                                <div class="CodeMirror-measure">
-                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt">
-                                                        <div>5</div>
-                                                    </div>
-                                                </div>
-                                                <div class="CodeMirror-measure"></div>
-                                                <div style="position: relative; z-index: 1;"></div>
-                                                <div class="CodeMirror-cursors">
-                                                    <div class="CodeMirror-cursor"
-                                                         style="left: 4px; top: 0px; height: 16px;">&nbsp;
-                                                    </div>
-                                                </div>
-                                                <div class="CodeMirror-code" style="">
-                                                    <div style="position: relative;">
-                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
-                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
-                                                                 style="left: 0px; width: 21px;">1
-                                                            </div>
-                                                        </div>
-                                                        <pre class=" CodeMirror-line "><span
-                                                                style="padding-right: 0.1px;"><span class="cm-comment">// JavaScript Editing with Firepad!</span></span></pre>
-                                                    </div>
-                                                    <div style="position: relative;">
-                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
-                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
-                                                                 style="left: 0px; width: 21px;">2
-                                                            </div>
-                                                        </div>
-                                                        <pre class=" CodeMirror-line "><span
-                                                                style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span
-                                                                class="cm-def">go</span>() {</span></pre>
-                                                    </div>
-                                                    <div style="position: relative;">
-                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
-                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
-                                                                 style="left: 0px; width: 21px;">3
-                                                            </div>
-                                                        </div>
-                                                        <pre class=" CodeMirror-line "><span
-                                                                style="padding-right: 0.1px;">  <span
-                                                                class="cm-keyword">var</span> <span class="cm-def">message</span> <span
-                                                                class="cm-operator">=</span> <span class="cm-string">"Hello, world."</span>;</span></pre>
-                                                    </div>
-                                                    <div style="position: relative;">
-                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
-                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
-                                                                 style="left: 0px; width: 21px;">4
-                                                            </div>
-                                                        </div>
-                                                        <pre class=" CodeMirror-line "><span
-                                                                style="padding-right: 0.1px;">  <span
-                                                                class="cm-variable">console</span>.<span
-                                                                class="cm-property">log</span>(<span
-                                                                class="cm-variable-2">message</span>);</span></pre>
-                                                    </div>
-                                                    <div style="position: relative;">
-                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
-                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
-                                                                 style="left: 0px; width: 21px;">5
-                                                            </div>
-                                                        </div>
-                                                        <pre class=" CodeMirror-line "><span
-                                                                style="padding-right: 0.1px;">}</span></pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="position: absolute; height: 30px; width: 1px; top: 88px;"></div>
-                                <div class="CodeMirror-gutters" style="height: 320px;">
-                                    <div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="powered-by-firepad" href="http://www.firepad.io/" target="_blank"></a></div>
+                    <div class="firepad"></div>
                 </div>
             </section>
+
             <section id="css">
                 <p>Combined with CodeMirror's extensive code editing features, Firepad is great for pair
                     programming!</p>
@@ -302,7 +44,6 @@
                 </div>
 
             </section>
-
             <section id="userlist">
                 <p>You can easily add user presence information and other features.</p>
                 <div class="pad-container">
@@ -319,14 +60,12 @@
 <script src="../assets/lib/bootstrap-affix.js"></script>
 
 <!-- Firebase -->
-<script src="../assets/lib/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
 
 <script src="../assets/lib/codemirror.js"></script>
-<script src="../assets/lib/javascript.js"></script>
-
 <!-- Firepad -->
-<script src="../assets/lib/firepad.min.js"></script>
-
+<script src="https://firepad.io/releases/1.5.5/firepad.js"></script>
 
 <script src="../lib/codemirror-5.60.0/addon/mode/overlay.js"></script>
 <script src="../lib/codemirror-5.60.0/addon/edit/matchbrackets.js"></script>
