@@ -4,53 +4,28 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Private Pad Demo</title>
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.4.1/firebase.js" integrity="sha512-0yqugUdIBQWLDMdlx/JynxD8/9bgqDNUWHR01YqNWEc50Im3YCoIly4ZHJj6TDjrQB4+uSEv6AMLSAAGwiuJLQ==" crossorigin="anonymous"></script>
+  <title>Firecode Live Private Coding Pad</title>
 
-  <!-- CodeMirror -->
-  <script src="lib/codemirror-5.60.0/lib/codemirror.js"></script>
-  <link rel="stylesheet" href="lib/codemirror-5.60.0/lib/codemirror.css" />
-  
-  
-  <script src="lib/codemirror-5.60.0/mode/clike/clike.js"></script>
-  <script src="lib/codemirror-5.60.0/mode/php/php.js"></script>
-  
-  <script src="lib/codemirror-5.60.0/mode/gfm/gfm.js"></script>
-  <script src="lib/codemirror-5.60.0/mode/javascript/javascript.js"></script>
-  
-  
-   <!-- Firepad -->
-   <link rel="stylesheet" href="https://firepad.io/releases/v1.5.9/firepad.css" />
-   <script src="https://firepad.io/releases/v1.5.9/firepad.min.js"></script>
-
-<link rel="stylesheet" href="firepad-userlist.css" />
-<link rel="stylesheet" href="pvtpad.css" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.css" />
+  <link rel="stylesheet" href="https://firepad.io/releases/1.5.5/firepad.css" />
+  <link rel="stylesheet" href="firepad-userlist.css" />
+  <link rel="stylesheet" href="pvt.css" />
+  <link href="https://www.firepad.io/images/favicon.ico" rel="shortcut icon" />
 </head>
 
 <body>
   <div id="top">
     <div id="top-bg-tile">
       <div id="top-content">
-
         <div id="firepad-demo"></div>
-
         <a onclick="displayPads()" id="my-pads" class="sprite-btn"></a>
-
         <a href="./" id="create-pad" class="sprite-btn"></a>
-
         <div id="my-pads-list">
-
         </div>
         <div id="firepad-container">
-
           <div id="firepad-userlist"></div>
-
           <div id="firepad"></div>
-
         </div>
-
         <div id="share-box">
           <div id="share-with-friends">Edit with Friends</div>
           <div id="share-features">
@@ -58,6 +33,13 @@
               <tr>
                 <td>
                   <input type="text" readonly="readonly" id="url" />
+                </td>
+                <td>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-text="Come edit a document with me using @Firepad!" data-count="none" data-size="large">Tweet</a>
+                </td>
+                <td>
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                  <div class="fb-like" data-send="true" data-width="250" data-layout="button_count" data-show-faces="false" data-font="arial"></div>
                 </td>
               </tr>
             </table>
@@ -70,9 +52,14 @@
       </div>
     </div>
   </div>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.js"></script>
+  <script src="https://firepad.io/releases/1.5.5/firepad.min.js"></script>
+  <script src="pvt--userlist.js"></script>
+  <script src="https://www.firepad.io/js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="pvt.js"></script>
+<script type="text/javascript">
 
-  
-  <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-39969708-1']);
   _gaq.push(['_setDomainName', 'firepad.io']);
@@ -85,10 +72,6 @@
   })();
 
 </script>
-
-<script type="text/javascript" src="https://www.firepad.io/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="firepad-userlist.js"></script>
-<script type="text/javascript" src="pvtpad.js"></script>
 
 <script type="text/javascript">
     function displayPads() {
