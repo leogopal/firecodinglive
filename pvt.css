@@ -9,6 +9,7 @@ body {
   font-family: "Helvetica Neue", sans-serif;
   min-width: 1020px;
   min-height: 400px;
+  background: #B9CBCF;
 }
 
 .sprite-btn {
@@ -29,17 +30,14 @@ body {
 
 #my-pads {
   position: absolute;
-  background-image: url('https://www.firepad.io/images/my_pads.png');
+  background-color: #165260;
   width: 120px;
   height: 36px;
   right: 230px;
   top: 27px;
   cursor: pointer;
   cursor: hand;
-}
-
-#my-pads:active {
-  background-image: url('https://www.firepad.io/images/my_pads_pressed.png');
+  color:white;
 }
 
 #my-pads-list {
@@ -79,17 +77,13 @@ body {
 
 #create-pad {
   position: absolute;
-  background-image: url('https://www.firepad.io/images/create-pad.png');
+  background-color: #165260;
   width: 190px;
   height: 36px;
   right: 30px;
   top: 27px;
   cursor: pointer;
   cursor: hand;
-}
-
-#create-pad:active {
-  background-image: url('https://www.firepad.io/images/create-pad-pressed.png');
 }
 
 #firepad-container {

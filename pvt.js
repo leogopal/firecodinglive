@@ -26,8 +26,11 @@ function joinFirepadForHash() {
     { 
       lineWrapping: true,
       lineNumbers: true,
-      theme: 'material-darker',
-        mode: 'javascript'
+      matchBrackets: true,
+      mode: "javascript",
+      indentUnit: 4,
+      indentWithTabs: true,
+      theme: 'material-darker'
     }
   );
 
@@ -36,19 +39,24 @@ function joinFirepadForHash() {
     codeMirror,
       { 
         userId: userId,
-        
+        defaultText: '// JavaScript Editing with Firepad!\nfunction go() {\n  var message = "Hello, world.";\n  console.log(message);\n}'
       }
   );
 
   userList = FirepadUserList.fromDiv(
+
     firepadRef.child('users'),
     document.getElementById('firepad-userlist'), 
     userId
+
   );
 
   firepad.on('ready', function() {
+
     if (firepad.isHistoryEmpty()) {
-      firepad.setText('Welcome to your own private pad!\n\nShare the URL below and collaborate with your friends.');
+        
+      firepad.setText('// JavaScript Editing with Firepad!\nfunction go() {\n  var message = "Hello, world.";\n  console.log(message);\n');
+    
     }
 
     ensurePadInList(id);
