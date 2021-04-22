@@ -10,20 +10,39 @@ function joinFirepadForHash() {
 
   var id = window.location.hash.replace(/#/g, '') || randomString(10);
   var url = window.location.toString().replace(/#.*/, '') + '#' + id;
+  
   firebase.initializeApp({
     apiKey: 'RvagRBvQY0GOz1CI8sof4hBsCXJQSSRpQEkWS35X',
     authDomain: "firepad-leogopal-default-rtdb.firebaseio.com",
     databaseURL: "https://firepad-leogopal-default-rtdb.firebaseio.com"
   
   });
-  var firepadRef = firebase.database().ref('demo').child(id);
+  var firepadRef = firebase.database().ref('private-pads').child(id);
 
   var userId = firepadRef.push().key; // Just a random ID.
-  codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
-  firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
-      { richTextToolbar: true, richTextShortcuts: true, userId: userId});
-  userList = FirepadUserList.fromDiv(firepadRef.child('users'),
-      document.getElementById('firepad-userlist'), userId);
+
+  codeMirror = CodeMirror(
+    document.getElementById('firepad'), 
+    { 
+      lineWrapping: true 
+    }
+  );
+
+  firepad = Firepad.fromCodeMirror(
+    firepadRef, 
+    codeMirror,
+      { 
+        richTextToolbar: true, 
+        richTextShortcuts: true, 
+        userId: userId
+      }
+  );
+
+  userList = FirepadUserList.fromDiv(
+    firepadRef.child('users'),
+    document.getElementById('firepad-userlist'), 
+    userId
+  );
 
   firepad.on('ready', function() {
     if (firepad.isHistoryEmpty()) {
@@ -37,21 +56,34 @@ function joinFirepadForHash() {
   codeMirror.focus();
 
   window.location = url;
+
   $('#url').val(url);
   $("#url").on('click', function(e) {
+
     $(this).focus().select();
     e.preventDefault();
     return false;
+
   });
 }
 
 function padListEnabled() {
-  return (typeof localStorage !== 'undefined' && typeof JSON !== 'undefined' && localStorage.setItem &&
-      localStorage.getItem && JSON.parse && JSON.stringify);
+
+  return (
+    typeof localStorage !== 'undefined' 
+    && typeof JSON !== 'undefined' 
+    && localStorage.setItem 
+    && localStorage.getItem 
+    && JSON.parse 
+    && JSON.stringify
+  );
+
 }
 
 function ensurePadInList(id) {
+
   if (!padListEnabled()) { return; }
+
   var list = JSON.parse(localStorage.getItem('demo-pad-list') || "{ }");
   if (!(id in list)) {
     var now = new Date();
