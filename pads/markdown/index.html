@@ -2,82 +2,62 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8"/>
 
-  <title>Firecode Live Private Markdown Pad</title>
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+    <title>Firecode Live Private Markdown Pad</title>
+    <!-- Firebase -->
 
-  <!-- CodeMirror -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css"/>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
 
-  <!-- Firepad -->
-  <link rel="stylesheet" href="https://firepad.io/releases/v1.5.10/firepad.css"/>
-  <script src="https://firepad.io/releases/v1.5.10/firepad.min.js"></script>
+    <!-- CodeMirror -->
+    <script src="../../lib/codemirror-5.60.0/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="../../lib/codemirror-5.60.0/lib/codemirror.css"/>
 
-  <link rel="stylesheet" href="../userlist.css" />
-  <link rel="stylesheet" href="../base-pad.css" />
+    <!-- Firepad -->
+    <link rel="stylesheet" href="https://firepad.io/releases/v1.5.10/firepad.css"/>
+    <script src="https://firepad.io/releases/v1.5.10/firepad.min.js"></script>
 
-  <link rel="stylesheet" href="../../lib/codemirror-5.60.0/theme/material-darker.css" />
+    <link rel="stylesheet" href="../userlist.css"/>
+    <link rel="stylesheet" href="../base-pad.css"/>
 
-  <link href="https://www.leogopal.com/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="../../lib/codemirror-5.60.0/theme/material-darker.css"/>
+
+    <link href="https://www.leogopal.com/favicon.ico" rel="shortcut icon"/>
 </head>
 
 <body>
-  <div id="top">
+<div id="top">
     <div id="top-bg-tile">
-      <div id="top-content">
-        <div id="firepad-demo"></div>
-        <h1>Live Coding Pads</h1>
-          <a onclick="displayPads()" id="my-pads" class="sprite-btn"></a>
-          <a href="../.." id="create-pad" class="sprite-btn"></a>
+        <div id="top-content">
+            <div id="firepad-demo"></div>
+            <h1>Live Markdown Pad Pads</h1>
 
-          <div id="my-pads-list">
-          </div>
-
-          <div id="firepad-container">
-            <div id="firepad-userlist"></div>
-            <code id="firecode"></code>
-          </div>
-
-        <div id="share-box">
-            <div id="share-features">
-              <table>
-                <tr>
-                  <td>
-                    <input type="text" readonly="readonly" id="url" />
-                  </td>
-                </tr>
-              </table>
+            <div id="firepad-container">
+                <div id="firepad-userlist"></div>
+                <code id="firecode"></code>
             </div>
-          </div>
         </div>
     </div>
 
+</div>
 
-    <script type="text/javascript" src="../userlist.js"></script>
+<script type="text/javascript" src="../userlist.js"></script>
 
-    <script src="https://www.firepad.io/js/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
-    <script src="../../lib/codemirror-5.60.0/addon/mode/overlay.js"></script>
-    <script src="../../lib/codemirror-5.60.0/mode/xml/xml.js"></script>
-    <script src="../../lib/codemirror-5.60.0/mode/markdown/markdown.js"></script>
-    <script src="../../lib/codemirror-5.60.0/mode/gfm/gfm.js"></script>
-    <script src="../../lib/codemirror-5.60.0/mode/javascript/javascript.js"></script>
-    <script src="../../lib/codemirror-5.60.0/mode/css/css.js"></script>
-    <script src="../../lib/codemirror-5.60.0/mode/htmlmixed/htmlmixed.js"></script>
-    <script src="../../lib/codemirror-5.60.0/mode/clike/clike.js"></script>
-    <script src="../../lib/codemirror-5.60.0/mode/meta.js"></script>
+<script src="../../lib/codemirror-5.60.0/addon/mode/overlay.js"></script>
+<script src="../../lib/codemirror-5.60.0/mode/xml/xml.js"></script>
+<script src="../../lib/codemirror-5.60.0/mode/markdown/markdown.js"></script>
+<script src="../../lib/codemirror-5.60.0/mode/gfm/gfm.js"></script>
+<script src="../../lib/codemirror-5.60.0/mode/javascript/javascript.js"></script>
+<script src="../../lib/codemirror-5.60.0/mode/css/css.js"></script>
+<script src="../../lib/codemirror-5.60.0/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../../lib/codemirror-5.60.0/mode/clike/clike.js"></script>
+<script src="../../lib/codemirror-5.60.0/mode/meta.js"></script>
 
-    <script type="text/javascript" src="md-pad.js"></script>
+<script type="text/javascript" src="md-pad.js"></script>
 
-  <script type="text/javascript">
-      function displayPads() {
-        $('#my-pads-list').toggle();
-      }
-  </script>
 
 </body>
 </html>
