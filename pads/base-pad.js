@@ -8,15 +8,15 @@ function joinFirepadForHash() {
     $('.CodeMirror').remove();
   }
 
-  var id = window.location.hash.replace(/#/g, '') || randomString(10);
-  var url = window.location.toString().replace(/#.*/, '') + '#' + id;
-  
   firebase.initializeApp({
     apiKey: 'RvagRBvQY0GOz1CI8sof4hBsCXJQSSRpQEkWS35X',
     authDomain: "firepad-leogopal-default-rtdb.firebaseio.com",
     databaseURL: "https://firepad-leogopal-default-rtdb.firebaseio.com"
-  
   });
+
+  var id = window.location.hash.replace(/#/g, '') || randomString(10);
+  var url = window.location.toString().replace(/#.*/, '') + '#' + id;
+
   var firepadRef = firebase.database().ref('private-pads').child(id);
 
   var userId = firepadRef.push().key; // Just a random ID.
@@ -42,6 +42,7 @@ function joinFirepadForHash() {
         defaultText: '// JavaScript Editing with Firepad!\nfunction go() {\n  var message = "Hello, world.";\n  console.log(message);\n}'
       }
   );
+  var time = new Date(firebase.firestore.Timestamp.now().seconds*1000).toLocaleDateString();
 
   userList = FirepadUserList.fromDiv(
 

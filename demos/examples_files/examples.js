@@ -123,6 +123,7 @@ $(window).on('ready', function() {
   }
 
   initializeExamplesFromUrl();
+
   setTimeout(function() {
     $(window).on('hashchange', initializeExamplesFromUrl);
   }, 0);
