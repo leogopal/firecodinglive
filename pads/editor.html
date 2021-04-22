@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Firecode Live Private Markdown Pad</title>
+
+    <link rel="stylesheet" href="../lib/codemirror-5.60.0/lib/codemirror.css"/>
+    <link rel="stylesheet" href="https://firepad.io/releases/1.5.5/firepad.css"/>
+
+    <link rel="stylesheet" href="../pads/userlist.css"/>
+    <link rel="stylesheet" href="../pads/base-pad.css"/>
+
+    <link rel="stylesheet" href="../lib/codemirror-5.60.0/theme/material-darker.css"/>
+
+    <link href="https://www.leogopal.com/favicon.ico" rel="shortcut icon"/>
+</head>
+
+<body>
+<div id="top">
+    <div id="top-bg-tile">
+        <div id="top-content">
+            <div id="firepad-demo"></div>
+            <h1>Live Coding Pads</h1>
+            <a onclick="displayPads()" id="my-pads" class="sprite-btn"></a>
+            <a href=".." id="create-pad" class="sprite-btn"></a>
+
+            <div id="my-pads-list">
+            </div>
+
+            <div id="firepad-container">
+                <div id="firepad-userlist"></div>
+                <div id="editor">
+                </div>
+            </div>
+
+            <div id="share-box">
+                <div id="share-features">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" readonly="readonly" id="url"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase.js"></script>
+    <script src="../lib/codemirror-5.60.0/lib/codemirror.js"></script>
+    <script src="https://firepad.io/releases/1.5.5/firepad.min.js"></script>
+    <script type="text/javascript" src="userlist.js"></script>
+    <script src="https://www.firepad.io/js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="editor-pad.js"></script>
+
+    <script type="text/javascript">
+        function displayPads() {
+            $('#my-pads-list').toggle();
+        }
+    </script>
+
+</body>
+</html>
