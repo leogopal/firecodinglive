@@ -21,23 +21,15 @@ function joinFirepadForHash() {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     var user = firebase.auth().currentUser;
-    var id = firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        var id = window.location.hash.replace(/#/g, '') || user.id;
+    } else {
+        var id = window.location.hash.replace(/#/g, '') || randomString(10);
+    }
 
-        if (user) {
-        // User is signed in.
-            alert(user.uid + ' is signed in');
-            return id = user.uid;
-        } else {
-        // No user is signed in.
-            alert('Not signed in.');
-            return id = randomString(10);
-        }
-    });
-
-    
     var url = window.location.toString().replace(/#.*/, '') + '#' + id;
     var firepadRef = firebase.database().ref('private-pads').child(id);
-    var userId = user.uid; // Just a random ID.
+    var userId = firepadRef.push().key; // Just a random ID.
 
     codeMirror = CodeMirror(
         document.getElementById('firecode'),
