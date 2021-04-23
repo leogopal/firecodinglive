@@ -20,7 +20,7 @@ function joinFirepadForHash() {
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-
+    var user = firebase.auth().currentUser;
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
