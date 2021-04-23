@@ -25,12 +25,12 @@ function joinFirepadForHash() {
 
         if (user) {
         // User is signed in.
-            alert(user.displayName + ' is signed in');
-            var id = window.location.hash.replace(/#/g, '') || user.uid;
+            alert(user.uid + ' is signed in');
+            id = window.location.hash.replace(/#/g, '') || user.uid;
         } else {
         // No user is signed in.
             alert('Not signed in.');
-            var id = window.location.hash.replace(/#/g, '') || randomstring(10);
+            id = window.location.hash.replace(/#/g, '') || randomString(10);
         }
     });
 
