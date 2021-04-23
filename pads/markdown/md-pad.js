@@ -21,16 +21,16 @@ function joinFirepadForHash() {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     var user = firebase.auth().currentUser;
-    firebase.auth().onAuthStateChanged(function(user) {
+    var id = firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
         // User is signed in.
             alert(user.uid + ' is signed in');
-            id = user.uid;
+            return id = user.uid;
         } else {
         // No user is signed in.
             alert('Not signed in.');
-            id = randomString(10);
+            return id = randomString(10);
         }
     });
 
