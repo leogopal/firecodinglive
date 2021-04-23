@@ -1,3 +1,5 @@
+var firepad = null, userList = null, codeMirror = null;
+
 function joinFirepadForHash() {
     if (firepad) {
         // Clean up.
@@ -6,11 +8,19 @@ function joinFirepadForHash() {
         $('.CodeMirror').remove();
     }
 
-    firebase.initializeApp({
-        apiKey: 'RvagRBvQY0GOz1CI8sof4hBsCXJQSSRpQEkWS35X',
-        authDomain: "firepad-leogopal-default-rtdb.firebaseio.com",
-        databaseURL: "https://firepad-leogopal-default-rtdb.firebaseio.com"
-    });
+    var firebaseConfig = {
+        apiKey: "AIzaSyAaA7QkqCKBlmT-cU3DyVXYAp5t-Pkfggk",
+        authDomain: "firecodelive.firebaseapp.com",
+        databaseURL: "https://firecodelive-default-rtdb.firebaseio.com",
+        projectId: "firecodelive",
+        storageBucket: "firecodelive.appspot.com",
+        messagingSenderId: "694520542067",
+        appId: "1:694520542067:web:fd0780aae5aa24b7558b06",
+        measurementId: "G-4DKK2YPLF6"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 
     var id = window.location.hash.replace(/#/g, '') || randomString(10);
     var url = window.location.toString().replace(/#.*/, '') + '#' + id;
