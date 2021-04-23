@@ -30,6 +30,7 @@ function joinFirepadForHash() {
         } else {
         // No user is signed in.
             alert('Not signed in.');
+            var id = window.location.hash.replace(/#/g, '') || randomstring(10);
         }
     });
 
