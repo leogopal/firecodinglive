@@ -20,12 +20,13 @@ function joinFirepadForHash() {
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+    
+    var id = window.location.hash.replace(/#/g, '') || randomString(10);
+
     var user = firebase.auth().currentUser;
     if (user) {
-        var id = window.location.hash.replace(/#/g, '') || user.id;
-    } else {
-        var id = window.location.hash.replace(/#/g, '') || randomString(10);
-    }
+        id = window.location.hash.replace(/#/g, '') || user.id;
+    } 
 
     var url = window.location.toString().replace(/#.*/, '') + '#' + id;
     var firepadRef = firebase.database().ref('private-pads').child(id);
