@@ -26,11 +26,11 @@ function joinFirepadForHash() {
         if (user) {
         // User is signed in.
             alert(user.uid + ' is signed in');
-            id = window.location.hash.replace(/#/g, '') || user.uid;
+            id = user.uid;
         } else {
         // No user is signed in.
             alert('Not signed in.');
-            id = window.location.hash.replace(/#/g, '') || randomString(10);
+            id = randomString(10);
         }
     });
 
