@@ -26,13 +26,14 @@ function joinFirepadForHash() {
         if (user) {
         // User is signed in.
             alert(user.displayName + ' is signed in');
+            var id = window.location.hash.replace(/#/g, '') || user.uid;
         } else {
         // No user is signed in.
             alert('Not signed in.');
         }
     });
+
     
-    var id = window.location.hash.replace(/#/g, '') || user.uid;
     var url = window.location.toString().replace(/#.*/, '') + '#' + id;
     var firepadRef = firebase.database().ref('private-pads').child(id);
     var userId = user.uid; // Just a random ID.
