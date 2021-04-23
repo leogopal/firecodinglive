@@ -32,10 +32,10 @@ function joinFirepadForHash() {
         }
    
 
-    var id = window.location.hash.replace(/#/g, '') || randomString(10);
+    var id = window.location.hash.replace(/#/g, '') || user.uid);
     var url = window.location.toString().replace(/#.*/, '') + '#' + id;
     var firepadRef = firebase.database().ref('private-pads').child(id);
-    var userId = f; // Just a random ID.
+    var userId = user.uid; // Just a random ID.
 
     codeMirror = CodeMirror(
         document.getElementById('firecode'),
