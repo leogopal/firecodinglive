@@ -21,7 +21,7 @@ function joinFirepadForHash() {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
-    var user = firebase.auth().currentUser;
+    firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
         // User is signed in.
@@ -30,8 +30,8 @@ function joinFirepadForHash() {
         // No user is signed in.
             alert('Not signed in.');
         }
-   
-
+    });
+    
     var id = window.location.hash.replace(/#/g, '') || user.uid;
     var url = window.location.toString().replace(/#.*/, '') + '#' + id;
     var firepadRef = firebase.database().ref('private-pads').child(id);
