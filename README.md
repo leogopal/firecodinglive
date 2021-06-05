@@ -1,5 +1,5 @@
 ## Examples
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5a8b896d-121d-46d4-b8db-8a0d8c4280af/deploy-status)](https://app.netlify.com/sites/quizzical-ritchie-0bc060/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8100b9d7-e084-49ca-8e88-224e5427dd76/deploy-status)](https://app.netlify.com/sites/sharp-ptolemy-dbf746/deploys)
 You can run the examples by simply opening any of the following files in your browser:
 
   * [`code.html`](demos/code.html) - Code-editing using CodeMirror.
