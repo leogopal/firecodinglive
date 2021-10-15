@@ -11,9 +11,14 @@ function joinFirepadForHash() {
 
 
   firebase.initializeApp({
-    apiKey: 'RvagRBvQY0GOz1CI8sof4hBsCXJQSSRpQEkWS35X',
-    authDomain: "firepad-leogopal-default-rtdb.firebaseio.com",
-    databaseURL: "https://firepad-leogopal-default-rtdb.firebaseio.com"
+    apiKey: "AIzaSyAaA7QkqCKBlmT-cU3DyVXYAp5t-Pkfggk",
+    authDomain: "app.hirespark.dev",
+    databaseURL: "https://firecodelive-default-rtdb.firebaseio.com",
+    projectId: "firecodelive",
+    storageBucket: "firecodelive.appspot.com",
+    messagingSenderId: "694520542067",
+    appId: "1:694520542067:web:fd0780aae5aa24b7558b06",
+    measurementId: "G-4DKK2YPLF6"
   });
 
   var id = window.location.hash.replace(/#/g, '') || randomString(10);
