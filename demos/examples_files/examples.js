@@ -113,8 +113,8 @@ var currentId;
 $(window).on('ready', function () {
     var config = {
         apiKey: '<API_KEY>',
-        authDomain: "firepad.firebaseapp.com",
-        databaseURL: "https://firepad.firebaseio.com"
+        authDomain: "firecodelive.firebaseapp.com",
+        databaseURL: "https://firecodelive.firebaseio.com"
     };
     firebase.initializeApp(config);
 
