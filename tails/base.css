@@ -1,0 +1,151 @@
+#firepad-container {
+    display: flex;
+    background: white;
+    /* TODO: Tune these more? */
+    -moz-box-shadow: 0 5px 25px #333;
+    -webkit-box-shadow: 0 5px 25px #333;
+    box-shadow: 0 5px 25px #333;
+  }
+  
+  #firepad-container .firepad-userlist {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+  }
+  
+  #firepad-container .firepad {
+    position: absolute;
+    left: 175px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+  }
+  
+  #share-box {
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    width: 650px;
+    height: 56px;
+  }
+  
+  #share-with-friends {
+    font-size: 24px;
+    color: white;
+    text-shadow: 0 0 3px #555;
+  }
+  
+  #share-features {
+    height: 35px;
+  }
+  
+  #share-features tr {
+    margin-right: 10px;
+  }
+  
+  #description {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    width: 380px;
+    height: 80px;
+    font-size: 18px;
+    color: #282828;
+  }
+  
+  #url {
+    width: 380px;
+    height: 30px;
+    border: 1px solid #a5a5a5;
+    font-size: 14px;
+    color: #a6a6a6;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .firepad-userlist {
+    /* default height */
+    height: 400px;
+    min-width: 175px;
+    background: #165260;; /* Old browsers */
+    color: #f8f6f6;
+  }
+  
+  .firepad-userlist {
+    text-align: left;
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: normal;
+  }
+  
+  .firepad-userlist-heading {
+    margin: 20px 15px 0;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 2px solid #c9c9c9;
+  }
+  
+  .firepad-userlist-users {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    top: 38px;
+    bottom: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  .firepad-userlist-user {
+    position: relative;
+    margin: 3px 0;
+    height: 32px;
+    border-bottom: 1px solid #c9c9c9;
+    padding-bottom: 5px;
+  }
+  
+  .firepad-userlist-color-indicator {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+  
+  input.firepad-userlist-name-input {
+    position: absolute;
+    left: 38px;
+    top: 0;
+    width: 105px;
+    height: 20px;
+    border: 0;
+    border-bottom: 1px solid #d6d6d6;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 1px;
+  }
+  
+  .firepad-userlist-name-hint {
+    position: absolute;
+    left: 38px;
+    top: 23px;
+    width: 300px; /* I'd rather it clip than wrap. */
+    font-size: 9px;
+    line-height: 11px;
+  }
+  
+  .firepad-userlist-name {
+    position: absolute;
+    top: 2px;
+    left: 38px;
+    width: 95px;
+    font-size: 13px;
+  }
+  

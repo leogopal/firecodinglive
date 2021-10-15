@@ -8,8 +8,6 @@ function joinFirepadForHash() {
     $('.CodeMirror').remove();
   }
 
-
-
   firebase.initializeApp({
     apiKey: "AIzaSyAaA7QkqCKBlmT-cU3DyVXYAp5t-Pkfggk",
     authDomain: "app.hirespark.dev",
