@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/leogopal/firecodinglive#readme",
   "dependencies": {
+    "@firebase/database": "^0.6.13",
     "firepad": "^1.5.11"
   },
   "devDependencies": {

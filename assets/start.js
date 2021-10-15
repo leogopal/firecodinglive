@@ -10,7 +10,7 @@ function joinFirepadForHash() {
     var firebaseConfig = {
         apiKey: "AIzaSyAaA7QkqCKBlmT-cU3DyVXYAp5t-Pkfggk",
         authDomain: "firecodelive.firebaseapp.com",
-        databaseURL: "https://firecodelive-default-rtdb.firebaseio.com",
+        databaseURL: "https://firecodelive.firebaseio.com/",
         projectId: "firecodelive",
         storageBucket: "firecodelive.appspot.com",
         messagingSenderId: "694520542067",
