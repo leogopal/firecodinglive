@@ -47,6 +47,7 @@
         authDomain: "firecodelive.firebaseapp.com",
         databaseURL: "https://firecodelive.firebaseio.com"
       };
+
       firebase.initializeApp(config);
 
       //// Get Firebase Database reference.
@@ -59,8 +60,15 @@
       var userId = Math.floor(Math.random() * 9999999999).toString();
 
       //// Create Firepad (with rich text features and our desired userId).
-      var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
-          { richTextToolbar: true, richTextShortcuts: true, userId: userId});
+      var firepad = Firepad.fromCodeMirror(
+          firepadRef, 
+          codeMirror,
+            { 
+                richTextToolbar: true, 
+                richTextShortcuts: true, 
+                userId: userId
+            }
+        );
 
       //// Create FirepadUserList (with our desired userId).
       var firepadUserList = FirepadUserList.fromDiv(firepadRef.child('users'),

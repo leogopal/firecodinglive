@@ -1,8 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8"/>
+  <head>
+    <meta charset="utf-8" />
 
     <title>Firecode Live Private Coding Pad</title>
 
@@ -12,31 +11,40 @@
 
     <!-- CodeMirror -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css"
+    />
 
     <!-- Firepad -->
-    <link rel="stylesheet" href="https://firepad.io/releases/v1.5.10/firepad.css"/>
+    <link
+      rel="stylesheet"
+      href="https://firepad.io/releases/v1.5.10/firepad.css"
+    />
     <script src="https://firepad.io/releases/v1.5.10/firepad.min.js"></script>
 
-    <link rel="stylesheet" href="../../lib/codemirror-5.60.0/theme/material-darker.css"/>
+    <link
+      rel="stylesheet"
+      href="../../lib/codemirror-5.60.0/theme/material-darker.css"
+    />
 
-    <link href="https://www.leogopal.com/favicon.ico" rel="shortcut icon"/>
-</head>
+    <link href="https://www.leogopal.com/favicon.ico" rel="shortcut icon" />
+  </head>
 
-<body onload="init()">
-<div id="firepad"></div>
-<script>
-    function init() {
-
+  <body onload="init()">
+    <div id="firepad"></div>
+    <div id="userlist"></div>
+    <script>
+      function init() {
         var firebaseConfig = {
-            apiKey: "AIzaSyAaA7QkqCKBlmT-cU3DyVXYAp5t-Pkfggk",
-            authDomain: "firecodelive.firebaseapp.com",
-            databaseURL: "https://firecodelive.firebaseio.com/",
-            projectId: "firecodelive",
-            storageBucket: "firecodelive.appspot.com",
-            messagingSenderId: "694520542067",
-            appId: "1:694520542067:web:fd0780aae5aa24b7558b06",
-            measurementId: "G-4DKK2YPLF6"
+          apiKey: "AIzaSyAaA7QkqCKBlmT-cU3DyVXYAp5t-Pkfggk",
+          authDomain: "firecodelive.firebaseapp.com",
+          databaseURL: "https://firecodelive.firebaseio.com/",
+          projectId: "firecodelive",
+          storageBucket: "firecodelive.appspot.com",
+          messagingSenderId: "694520542067",
+          appId: "1:694520542067:web:fd0780aae5aa24b7558b06",
+          measurementId: "G-4DKK2YPLF6",
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
@@ -44,13 +52,49 @@
         // Get Firebase Database reference.
         var firepadRef = firebase.database().ref();
 
-        // Create CodeMirror (with lineWrapping on).
-        var codeMirror = CodeMirror(document.getElementById('firepad'), {lineWrapping: true});
+        // Create a random ID to use as our user ID (we must give this to firepad and FirepadUserList).
+        var userId = Math.floor(Math.random() * 9999999999).toString();
 
-        // Create Firepad (with rich text toolbar and shortcuts enabled).
-        var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
-            {richTextShortcuts: true, richTextToolbar: true, defaultText: 'Hello, World!'});
-    }
-</script>
-</body>
+         //// Create CodeMirror (with lineWrapping on).
+        var codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
+
+        //// Create Firepad (with rich text features and our desired userId).
+        var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
+          richTextToolbar: true,
+          richTextShortcuts: true,
+          userId: userId,
+        });
+
+        //// Create FirepadUserList (with our desired userId).
+        var firepadUserList = FirepadUserList.fromDiv(
+          firepadRef.child("users"),
+          document.getElementById("userlist"),
+          userId
+        );
+
+        //// Initialize contents.
+        firepad.on("ready", function () {
+          if (firepad.isHistoryEmpty()) {
+            firepad.setText("Check out the user list to the left!");
+          }
+        });
+      }
+
+      // Helper to get hash from end of URL or generate a random one.
+      function getExampleRef() {
+        var ref = firebase.database().ref();
+        var hash = window.location.hash.replace(/#/g, "");
+        if (hash) {
+          ref = ref.child(hash);
+        } else {
+          ref = ref.push(); // generate unique location.
+          window.location = window.location + "#" + ref.key; // add it as a hash to the URL.
+        }
+        if (typeof console !== "undefined") {
+          console.log("Firebase data: ", ref.toString());
+        }
+        return ref;
+      }
+    </script>
+  </body>
 </html>
